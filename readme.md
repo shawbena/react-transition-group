@@ -8,4 +8,4 @@ CSS 过渡及动画需要时间，配合属性切换来完成。而且大部分�
 
 [react-transition-group](/react-transition-group) 拷贝自 [reactjs/react-transition-group](https://github.com/reactjs/react-transition-group), 许可证同源许可证。
 
-其他内容采用 [MTI](/LISTNESE) 许可证。
+其他内容采用 [MTI](/LICENSE) 许可证。
