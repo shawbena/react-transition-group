@@ -1,8 +1,8 @@
 {
   "name": "react-transition-group",
-  "version": "2.3.0-beta.0",
-  "description": "A react component toolset for managing animations",
-  "main": "lib/index.js",
+  "version": "",
+  "description": "",
+  "main": "",
   "scripts": {
     "examples": "rm -rvf build/examples && webpack --config scripts/examples.js",
     "test": "npm run lint && npm run testonly",
@@ -19,32 +19,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/reactjs/react-transition-group.git"
+    "url": ""
   },
   "keywords": [
-    "react",
-    "transition",
-    "addons",
-    "transition-group",
-    "animation",
-    "css",
-    "transitions"
   ],
   "author": "",
-  "license": "BSD-3-Clause",
-  "bugs": {
-    "url": "https://github.com/reactjs/react-transition-group/issues"
-  },
-  "homepage": "https://github.com/reactjs/react-transition-group#readme",
-  "jest": {
-    "testRegex": "-test\\.js",
-    "setupFiles": [
-      "./test/setup.js"
-    ],
-    "roots": [
-      "<rootDir>/test"
-    ]
-  },
+  "license": "MIT",
   "dependencies": {
     "chain-function": "^1.0.0",
     "dom-helpers": "^3.2.0",
@@ -94,13 +74,5 @@
     "typescript": "^2.7.1",
     "webpack": "^3.6.0",
     "webpack-atoms": "^3.0.2"
-  },
-  "release-script": {
-    "altPkgRootFolder": "lib"
-  },
-  "browserify": {
-    "transform": [
-      "loose-envify"
-    ]
   }
 }
