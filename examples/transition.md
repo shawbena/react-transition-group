@@ -173,3 +173,19 @@ default: `function noop(){}`
 ### `onExited`
 
 `"exited"` 状态应用后触发的回调。
+
+## Understanding `Transition.js`
+
+`in` 为 false 时组件的初状态是 `UNMOUNTED` (props.unmountOnExit || props.mountOnEnter) | `EXITED`
+
+`in` 为 true 时初始状态是 `EXITED` (appear === true) | `ENTERED` (appear === false)
+
+### `child` : `Function` | `element`
+
+`Function`: (status: string, childProps: Object)
+
+`element`: `React.Children.only(children)`, 组件不会接收 `status` 属性。提供元素无法完成动画。提供 React 元素的 children 不如 `<CSSTransition>` 有意义。提供函数提收动画状态是有意义的，提供元素类型的组件接收变化的类名是有意义的。
+
+### `unmountOnExit`
+
+组件卸载是在 `exited` 状态设置后执行的。

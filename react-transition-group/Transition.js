@@ -127,12 +127,15 @@ class Transition extends React.Component {
       }
     }
 
+    // 这里的 state 变化不会导致 componentDidUpdate 调用，因此调用了 componentDidMount
+    // 而 setState 方法则会
     this.state = { status: initialStatus };
 
     this.nextCallback = null;
   }
 
   getChildContext() {
+    // ?
     return { transitionGroup: null }; // allows for nested Transitions
   }
 
@@ -141,6 +144,7 @@ class Transition extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    // 正在执行的动画没执行完之前不能执行新动画
     const { status } = this.pendingState || this.state;
 
     if (nextProps.in) {
@@ -152,12 +156,14 @@ class Transition extends React.Component {
       }
     } else {
       if (status === ENTERING || status === ENTERED) {
+        // props 的变化也会导致组件更新
         this.nextStatus = EXITING;
       }
     }
   }
 
   componentDidUpdate() {
+    // 属性变化引起的更新也会调用该生命周期方法
     this.updateStatus();
   }
 
