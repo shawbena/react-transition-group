@@ -186,6 +186,10 @@ default: `function noop(){}`
 
 `element`: `React.Children.only(children)`, 组件不会接收 `status` 属性。提供元素无法完成动画。提供 React 元素的 children 不如 `<CSSTransition>` 有意义。提供函数提收动画状态是有意义的，提供元素类型的组件接收变化的类名是有意义的。
 
+`element`:
+
+`CSSTransition` 组件使用的是 `element` 选项。传递元素可以能过 `Transition` 的属性获知其状态变化。
+
 ### `unmountOnExit`
 
 组件卸载是在 `exited` 状态设置后执行的。
